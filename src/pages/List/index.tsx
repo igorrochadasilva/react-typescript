@@ -40,7 +40,7 @@ const List: React.FC = () => {
         return movimentType === 'entry-balance' ?
              {
                 title: 'Entradas',
-                lineColor: '#F7931B',
+                lineColor: '#4E41F0',
                 data: gains
             }
         : {            
@@ -103,7 +103,7 @@ const List: React.FC = () => {
         try{
             const parseMonth = Number(month)
             setMonthSelected(parseMonth)
-        } catch(error){
+        } catch{
             throw new Error('Invalid month value. Is accept 0 - 24')
         }
     }
@@ -113,7 +113,7 @@ const List: React.FC = () => {
         try{
             const parseYear = Number(year)
             setyYearSelected(parseYear)
-        } catch(error){
+        } catch{
             throw new Error('Invalid year value. Is accept integer number')
         }
     }
