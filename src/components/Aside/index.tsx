@@ -3,11 +3,13 @@ import React from 'react'
 import logoIgm from '../../assets/logo.svg'
 import { Link } from 'react-router-dom'
 
+import { useAuth } from '../../hooks/auth'
+
 import {
     MdDashboard,
     MdArrowDownward,
     MdArrowUpward,
-    MdExplicit
+    MdExplicit,
 } from 'react-icons/md'
 
 import {
@@ -15,11 +17,15 @@ import {
     Header,
     LogImg,
     MenuContainer,
+    MenuItemButton,
     // MenuItemLink,
     Title
 } from './styles'
     
 const Aside: React.FC = () => {
+
+    const { signOut } = useAuth()
+
     return (
     
         <Container>
@@ -28,7 +34,7 @@ const Aside: React.FC = () => {
                 <Title>Minha Carteira</Title>
             </Header>
             <MenuContainer>
-                <Link to="/dashboard">                 
+                <Link to="/">                 
                     <MdDashboard/> Dashboard        
                 </Link>
                 
@@ -39,9 +45,9 @@ const Aside: React.FC = () => {
                  <Link to="/list/exit-balance">                   
                     <MdArrowDownward/> Saidas                   
                 </Link>                           
-                <Link to="#">
+                <MenuItemButton onClick={signOut}>
                     <MdExplicit />Sair
-                </Link>
+                </MenuItemButton>
             </MenuContainer>
         </Container>
     )
