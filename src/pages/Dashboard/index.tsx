@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useCallback } from 'react'
 
 //components
 import { 
@@ -311,7 +311,7 @@ const Dashboard: React.FC = () => {
     },[monthSelected, yearSelected])
     
     //convertendo mês string para number
-    const handleMonthSelected = (month: string) => {
+    const handleMonthSelected = useCallback((month: string) => {
         
         try{
             const parseMonth = Number(month)
@@ -319,9 +319,9 @@ const Dashboard: React.FC = () => {
         } catch{
             throw new Error('Invalid month value. Is accept 0 - 24')
         }
-    }
+    }, [])
     //convertendo ano string para number
-    const handleYearSelected = (year: string) => {
+    const handleYearSelected = useCallback((year: string) => {
         
         try{
             const parseYear = Number(year)
@@ -329,7 +329,7 @@ const Dashboard: React.FC = () => {
         } catch{
             throw new Error('Invalid year value. Is accept integer number')
         }
-    }
+    }, [])
     
     return (
         <Container>

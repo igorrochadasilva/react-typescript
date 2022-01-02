@@ -31,11 +31,9 @@ interface IBarChatBoxProps {
 const BarChartBox: React.FC <IBarChatBoxProps> = ({
     title,
     data
-}) => {
+}) =>  (
     
-    return (
-    
-        <Container>
+    <Container>
             <SideLeft>
                 <h2>{title}</h2>
                 <LegendContainer>
@@ -75,8 +73,8 @@ const BarChartBox: React.FC <IBarChatBoxProps> = ({
                     </BarChart>
                 </ResponsiveContainer>
             </SideRight>
-        </Container>
-    )
-}
+    </Container>
+)
+
 
 export default BarChartBox
