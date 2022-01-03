@@ -38,4 +38,41 @@ export const Container = styled.div<IContainerProps>`
         bottom: 10px;
     }
     
+    
+    @media(max-width: 770px){
+        > span{
+            font-size: 14px;
+        }
+        
+        > h1{
+            word-wrap: break-word;
+            font-size:22px;
+            
+            > strong {
+                display: inline-block;            
+                width: 100%;
+                font-size: 16px;
+            }
+        }          
+    }    
+    
+     @media(max-width: 420px){
+        width: 100%;
+        
+        > h1 {
+            display: flex;
+            
+            strong{
+                position: initial;
+                width: auto;
+                font-size: 22px;            
+            }
+            
+            strong::after{
+                content:'';
+                width: 3px;                
+                display: inline-block;
+            }
+        }
+    }   
 `;
